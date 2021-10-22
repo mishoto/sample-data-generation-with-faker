@@ -3,10 +3,10 @@ package dev.mihail.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="customer", schema="data")
+@Table(name="customer")
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = CUSTOMER_ID, nullable = false)
     private Long id;
     @Column(name = CUSTOMER_FN, nullable = false)
@@ -18,7 +18,7 @@ public class Customer {
     @Column(name = CUSTOMER_EMAIL)
     private String email;
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JoinColumn(name = C_ADDRESS_ID, referencedColumnName = "address_id")
+    @JoinColumn(name = ADDRESS_ID, referencedColumnName = "address_id")
     private Address address;
 
     public static final String CUSTOMER_ID = "customer_id";
@@ -26,7 +26,7 @@ public class Customer {
     public static final String CUSTOMER_LN = "customer_ln";
     public static final String CUSTOMER_PHONE = "customer_phone";
     public static final String CUSTOMER_EMAIL = "customer_email";
-    public static final String C_ADDRESS_ID = "c_address_id";
+    public static final String ADDRESS_ID = "address_id";
 
     public Customer(){}
 

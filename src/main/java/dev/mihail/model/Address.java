@@ -3,10 +3,10 @@ package dev.mihail.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="c_address", schema="data")
+@Table(name="address")
 public class Address {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = ADDRESS_ID, nullable = false)
     private Long id;
     @Column(name = COUNTRY, nullable = false)

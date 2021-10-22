@@ -38,7 +38,7 @@ public class SampleDataLoader implements CommandLineRunner {
                                 faker.address().streetAddressNumber(),
                                 faker.address().state()
                         )
-                )).collect(Collectors.toUnmodifiableList());
+                )).collect(Collectors.toList());
 
         customerRepository.saveAll(customers);
 
